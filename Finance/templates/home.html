@@ -6,8 +6,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>{% block title %}Home page{% endblock title %}</title>
 </head>
-<body>
-    <nav class="bg-indigo-500 p-4 text-white">
+<body class="bg-cover bg-center bg-no-repeat min-h-screen" style="background-image: url('/static/images/background1.jpg');">
+{% comment %} <body> {% endcomment %}
+    
+
+    <nav class="fixed top-0 left-0 w-full bg-indigo-500 bg-opacity-70 backdrop-blur-md p-4 text-white shadow-md z-50 flex items-center ">
+
         {% if user.is_authenticated %}
         <a href="{% url "dashboard" %}" class="mx-5">Dashboard</a>
         <a href="{% url "Transactioadd" %}">Add Transaction</a>

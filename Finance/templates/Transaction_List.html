@@ -1,34 +1,34 @@
 {% extends "home.html" %}
 {% block title %}Register{% endblock title %}
 {% block content %}
-<a href="{% url "export_transcation" %}" class="ml-4 my-4 inline-block px-6 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200">Generate Report</a>
+<a href="{% url "export_transcation" %}" class="ml-4 my-4 mt-20 inline-block px-6 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200">Generate Report</a>
 <h1 class="text-xl font-bold my-5 text-center">Transaction List</h1>
 <table class="min-w-full tabel-auto border-collapse border border-gray-300 text-center">
   <thead>
     <tr class="bg-gray-100">
-        <th class="px-4 py-2 border border-gray-300">S.no</th>
-        <th class="px-4 py-2 border border-gray-300">Title</th>
-        <th class="px-4 py-2 border border-gray-300">Amount</th>
-        <th class="px-4 py-2 border border-gray-300">Type</th>
-        <th class="px-4 py-2 border border-gray-300">Date</th>
-        <th class="px-4 py-2 border border-gray-300">Update</th>
+        <th class="px-4 py-2 border border-black-300">S.no</th>
+        <th class="px-4 py-2 border border-black-300">Title</th>
+        <th class="px-4 py-2 border border-black-300">Amount</th>
+        <th class="px-4 py-2 border border-black-300">Type</th>
+        <th class="px-4 py-2 border border-black-300">Date</th>
+        <th class="px-4 py-2 border border-black-300">Update</th>
     </tr>
   </thead>
   <tbody>
     {% for i in transaction  %}
-    <tr class="hover:bg-gray-50">
-      <td class="px-4 py-2 border border-gray-300">{{forloop.counter}}</td>
-      <td class="px-4 py-2 border border-gray-300"> {{i.title}} </td>
-      <td class="px-4 py-2 border border-gray-300"> {{i.amount}} </td>
-      <td class="px-4 py-2 border border-gray-300">
+    <tr class="hover:bg-gray-50  hover:text-black">
+      <td class="px-4 py-2 border border-black-500">{{forloop.counter}}</td>
+      <td class="px-4 py-2 border border-black-500"> {{i.title}} </td>
+      <td class="px-4 py-2 border border-black-500"> {{i.amount}} </td>
+      <td class="px-4 py-2 border border-black-500">
         {% if i.transaction_type == 'Income' %}
         Credit
         {% else %}
         Debit
         {% endif %}
         </td>
-      <td class="px-4 py-2 border border-gray-300"> {{i.date}} </td>
-      <td class="px-2 py-2 border border-gray-300"> 
+      <td class="px-4 py-2 border border-black-500 "> {{i.date}} </td>
+      <td class="px-2 py-2 border border-black-500"> 
         <a href="{% url "transactionList_update" i.id %}" class=" px-3 py-1 inline-block  text-sm font-medium text-white bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200">Update</a>
         <a href="{% url "Transactiondata_delete" i.id %}" class="px-3 py-1 ml-2 inline-block  text-sm font-medium text-white bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200">Delete</a>
       </td>

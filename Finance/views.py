@@ -103,7 +103,7 @@ def export_transcation(request):
     # set header for downloading file
     response['content-Disposition']='attachment;filename=transcations_report.xlsx'
     
-    messages.success(request,"File Downloaded Successfully")
+
     return response
 
 class TransactionListview_update(LoginRequiredMixin,View):
