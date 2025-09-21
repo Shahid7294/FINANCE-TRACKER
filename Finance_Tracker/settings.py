@@ -25,7 +25,15 @@ SECRET_KEY = 'django-insecure-g)=^-orlolsvx$e_w!p180)db@o#(o_&d#y*)(g4dq@14nbwpe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "finance-tracker-4x6p.onrender.com",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://finance-tracker-4x6p.onrender.com",
+]
 
 
 # Application definition
